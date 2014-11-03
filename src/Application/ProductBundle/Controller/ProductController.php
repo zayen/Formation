@@ -4,6 +4,7 @@ namespace Application\ProductBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\BaseManager;
 
 use Application\ProductBundle\Entity\Product;
 use Application\ProductBundle\Form\ProductType;
@@ -21,9 +22,7 @@ class ProductController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('ApplicationProductBundle:Product')->findAll();
+        $entities = $this->container->get('application.product_manager')->loadProduct();
 
         return $this->render('ApplicationProductBundle:Product:index.html.twig', array(
             'entities' => $entities,
