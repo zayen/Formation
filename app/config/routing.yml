@@ -1,0 +1,4 @@
+application_product:
+    resource: "@ApplicationProductBundle/Resources/config/routing.yml"
+    prefix:   /
+
