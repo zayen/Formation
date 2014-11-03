@@ -41,5 +41,14 @@ class ProductManager extends BaseManager
         return $this->em->getRepository('ApplicationProductBundle:Product');
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function loadProductCategory($id)
+    {
+        return $this->getRepository()->getWithCategories($id);
+    }
+
 
 }

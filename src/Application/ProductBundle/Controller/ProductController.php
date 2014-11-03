@@ -220,4 +220,17 @@ class ProductController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * @param $id
+     */
+    public function listByCategoryAction($id)
+    {
+        $entities = $this->container->get('application.product_manager')->loadProductCategory($id);
+
+        return $this->render('ApplicationProductBundle:Product:listByCategory.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
 }

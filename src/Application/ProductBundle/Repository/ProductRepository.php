@@ -12,6 +12,21 @@ use Doctrine\ORM\EntityRepository;
  */
 class ProductRepository extends EntityRepository
 {
+
+    /**
+     * @param $id
+     * @return array
+     */
+    public function getWithCategories($id)
+    {
+        $query = $this->createQueryBuilder('a');
+        $query->join('a.category', 'c')
+            ->where('c.id = :category_id')
+            ->setParameter('category_id', $id);
+        return $query->getQuery()
+            ->getResult();
+    }
+
     /**
      * @return array
      */
@@ -22,4 +37,6 @@ class ProductRepository extends EntityRepository
             ->setParameter('enabled', true);
         return $query->getQuery()->getResult();
     }
+
+
 }

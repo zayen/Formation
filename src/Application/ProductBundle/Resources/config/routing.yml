@@ -2,6 +2,6 @@ application_product_product:
     resource: "@ApplicationProductBundle/Resources/config/routing/product.yml"
     prefix:   /product
 
-application_product_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: ApplicationProductBundle:Default:index }
+application_category_category:
+    resource: "@ApplicationProductBundle/Resources/config/routing/category.yml"
+    prefix:   /category

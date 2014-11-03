@@ -1,6 +1,6 @@
 Application\ProductBundle\Entity\Category:
     type: entity
-    table: null
+    table: category
     repositoryClass: Application\ProductBundle\Repository\CategoryRepository
     id:
         id:

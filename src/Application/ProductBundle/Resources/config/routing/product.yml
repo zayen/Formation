@@ -28,3 +28,7 @@ product_delete:
     path:     /{id}/delete
     defaults: { _controller: "ApplicationProductBundle:Product:delete" }
     requirements: { _method: post|delete }
+
+product_listByCategory:
+    path:     /category/show/{id}
+    defaults: { _controller: "ApplicationProductBundle:Product:listByCategory" }
