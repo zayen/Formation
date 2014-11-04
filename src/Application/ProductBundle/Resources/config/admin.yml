@@ -1,0 +1,6 @@
+services:
+    sonata.product.admin.product:
+        class: Application\ProductBundle\Admin\ProductAdmin
+        arguments: [~, Application\ProductBundle\Entity\Product, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Product}

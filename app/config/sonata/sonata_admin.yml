@@ -1,0 +1,9 @@
+sonata_admin:
+    title:      Application
+    title_logo: bundles/applicationproduct/img/fancy_acme_logo.png
+    templates:
+        dashboard: SonataAdminBundle:Core:dashboard.html.twig
+    dashboard:
+        blocks:
+            - position: left
+              type: sonata.admin.block.admin_list

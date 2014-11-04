@@ -1,7 +1,10 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: @ApplicationProductBundle/Resources/config/admin.yml }
 
+    - { resource: sonata/sonata_admin.yml }
+    - { resource: sonata/sonata_block.yml }
 framework:
     #esi:             ~
     #translator:      { fallback: "%locale%" }
@@ -70,3 +73,6 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# CONFIGURING SONATAADMINBUNDLE
+
