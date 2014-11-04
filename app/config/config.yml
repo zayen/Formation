@@ -5,6 +5,10 @@ imports:
 
     - { resource: sonata/sonata_admin.yml }
     - { resource: sonata/sonata_block.yml }
+    - { resource: sonata/sonata_user.yml }
+    - { resource: fos/fos_user.yml }
+
+
 framework:
     #esi:             ~
     #translator:      { fallback: "%locale%" }
@@ -62,9 +66,13 @@ doctrine:
         #   3. Uncomment next line:
         #     path:     "%database_path%"
 
+        types:
+            json: Sonata\Doctrine\Types\JsonType
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+
+
 
 # Swiftmailer Configuration
 swiftmailer:
